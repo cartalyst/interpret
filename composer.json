@@ -1,5 +1,5 @@
 {
-	"name": "cartalyst/bookshelf",
+	"name": "cartalyst/interpret",
 	"description": "CMS, revolutionalized.",
 	"keywords": ["platform", "ecommerce", "laravel", "bootstrap"],
 	"license": "BSD-3-Clause",
@@ -36,7 +36,11 @@
 		"illuminate/database": "4.0.*",
 		"illuminate/filesystem": "4.0.*",
 
-		"dflydev/markdown": "v1.0.2"
+		"symfony/finder": "2.3.*",
+
+		"dflydev/markdown": "v1.0.2",
+
+		"daylerees/kurenai": "1.0.*"
 	},
 	"suggest": {
 		"illuminate/database": "We provide an Eloquent book source.",
@@ -46,8 +50,12 @@
 		"mockery/mockery": "0.7.2"
 	},
 	"autoload": {
+		"classmap": [
+			"src/Cartalyst/Interpret/Exceptions.php",
+			"src/migrations"
+		],
 		"psr-0": {
-			"Cartalyst\\Bookshelf": "src"
+			"Cartalyst\\Interpret": "src"
 		}
 	},
 	"extra": {

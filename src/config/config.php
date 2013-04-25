@@ -1,6 +1,6 @@
 <?php
 /**
- * Part of the Bookshelf package.
+ * Part of the Interpret package.
  *
  * NOTICE OF LICENSE
  *
@@ -10,7 +10,7 @@
  * bundled with this package in the LICENSE file.  It is also available at
  * the following URL: http://www.opensource.org/licenses/BSD-3-Clause
  *
- * @package    Bookshelf
+ * @package    Interpret
  * @version    1.0.0
  * @author     Cartalyst LLC
  * @license    BSD License (3-clause)
@@ -22,15 +22,27 @@ return array(
 
 	/*
 	|--------------------------------------------------------------------------
-	| Paths
+	| File Specific Configuration
 	|--------------------------------------------------------------------------
 	|
-	| Here you set the default paths for your book shelf.
+	| Interpret can resolve file-based content as well as database-based
+	| content. Here, we specify configuration relative to file-based content.
 	|
 	*/
 
-	'paths' => array(
-		__DIR__.'/../../../../../public/bookshelf',
+	'file' => array(
+
+		/*
+		|--------------------------------------------------------------------------
+		| Path
+		|--------------------------------------------------------------------------
+		|
+		| Here you set the default path for file-based content.
+		|
+		*/
+
+		'path' => __DIR__.'/../../../../../public/content',
+
 	),
 
 );

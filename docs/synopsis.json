@@ -1,9 +1,9 @@
 {
-	"name" : "Bookshelf",
+	"name" : "Interpret",
 	"type" : "package",
 	"public" : false,
 	"branch" : "master",
-	"github" : "cartalyst/bookshelf",
+	"github" : "cartalyst/interpret",
 	"travis" : false,
 	"demo" : false
 }
