@@ -72,7 +72,7 @@ class EloquentLocator extends Model implements LocatorInterface {
 		return array_map(function($content) use ($me)
 		{
 			return $me->transformContent($content);
-		}, $this->newQuery()->all()->all());
+		}, $this->newQuery()->get()->all());
 	}
 
 	/**
