@@ -110,6 +110,16 @@ class FilesystemLocator implements LocatorInterface {
 	}
 
 	/**
+	 * Get the location.
+	 *
+	 * @return string
+	 */
+	public function getLocation()
+	{
+		return 'filesystem';
+	}
+
+	/**
 	 * Queries the filesystem using the Symfony Finder
 	 * to find one or more files with an optional slug.
 	 *

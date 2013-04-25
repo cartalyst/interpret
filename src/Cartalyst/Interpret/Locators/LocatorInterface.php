@@ -49,4 +49,11 @@ interface LocatorInterface {
 	 */
 	public function locateAll();
 
+	/**
+	 * Get the location.
+	 *
+	 * @return string
+	 */
+	public function getLocation();
+
 }

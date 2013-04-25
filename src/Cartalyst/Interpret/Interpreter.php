@@ -74,7 +74,11 @@ class Manager {
 			{
 				list($format, $value, $attributes) = $located;
 
-				return $this->createContent($format, $slug, $value, $attributes);
+				$content = $this->createContent($format, $slug, $value, $attributes);
+
+				$content->setLocation($locator->getLocation());
+
+				return $content;
 			}
 		}
 

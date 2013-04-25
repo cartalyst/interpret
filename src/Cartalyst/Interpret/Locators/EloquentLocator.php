@@ -76,6 +76,16 @@ class EloquentLocator extends Model implements LocatorInterface {
 	}
 
 	/**
+	 * Get the location.
+	 *
+	 * @return string
+	 */
+	public function getLocation()
+	{
+		return 'eloquent';
+	}
+
+	/**
 	 * Transforms a content instance into the required
 	 * format for the LocatorInterface.
 	 *

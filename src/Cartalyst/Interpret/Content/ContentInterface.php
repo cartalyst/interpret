@@ -31,6 +31,22 @@ interface ContentInterface {
 	public function __construct($slug, $value, array $attributes = null);
 
 	/**
+	 * Set the location which the content came
+	 * from.
+	 *
+	 * @return string
+	 */
+	public function getLocation();
+
+	/**
+	 * Sets the location which the content came
+	 * from.
+	 *
+	 * @param  string  $location
+	 */
+	public function setLocation($location);
+
+	/**
 	 * Returns the content's slug.
 	 *
 	 * @return string

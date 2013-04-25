@@ -42,6 +42,13 @@ abstract class Content {
 	protected $attributes = array();
 
 	/**
+	 * The content's location.
+	 *
+	 * @var location
+	 */
+	protected $location = 'memory';
+
+	/**
 	 * Creates a new content instance.
 	 *
 	 * @param  string  $slug
@@ -58,6 +65,28 @@ abstract class Content {
 		{
 			$this->attributes = $attributes;
 		}
+	}
+
+	/**
+	 * Set the location which the content came
+	 * from.
+	 *
+	 * @return string
+	 */
+	public function getLocation()
+	{
+		return $this->location;
+	}
+
+	/**
+	 * Sets the location which the content came
+	 * from.
+	 *
+	 * @param  string  $location
+	 */
+	public function setLocation($location)
+	{
+		$this->location = $location;
 	}
 
 	/**
