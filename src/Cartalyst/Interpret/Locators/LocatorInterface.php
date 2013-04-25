@@ -41,4 +41,12 @@ interface LocatorInterface {
 	 */
 	public function locate($slug);
 
+	/**
+	 * Locates all content, returning an array of
+	 * arrays in the same format as locate().
+	 *
+	 * @return array
+	 */
+	public function locateAll();
+
 }

@@ -18,7 +18,9 @@
  * @link       http://cartalyst.com
  */
 
-class EloquentLocator extends Model implements FinderInterface {
+use Illuminate\Database\Eloquent\Model;
+
+class EloquentLocator extends Model implements LocatorInterface {
 
 	/**
 	 * The table associated with the model.
@@ -59,18 +61,33 @@ class EloquentLocator extends Model implements FinderInterface {
 	}
 
 	/**
+	 * Locates all content, returning an array of
+	 * arrays in the same format as locate().
+	 *
+	 * @return array
+	 */
+	public function locateAll()
+	{
+		$me = $this;
+		return array_map(function($content) use ($me)
+		{
+			return $me->transformContent($content);
+		}, $this->newQuery()->all()->all());
+	}
+
+	/**
 	 * Transforms a content instance into the required
 	 * format for the LocatorInterface.
 	 *
 	 * @param  Cartalyst\Interpret\Locators\EloquentLocator  $content
 	 * @return array
 	 */
-	protected function transformContent($content)
+	public function transformContent($content)
 	{
 		return array(
 			$content->format,
 			$content->value,
-			array_diff_key($result->attributesToArray(), array_flip(array('slug', 'format', 'created_at', 'updated_at')))
+			array_diff_key($content->attributesToArray(), array_flip(array('slug', 'format', 'value', 'created_at', 'updated_at')))
 		);
 	}
 

@@ -18,7 +18,7 @@
  * @link       http://cartalyst.com
  */
 
-class ContentInterface {
+interface ContentInterface {
 
 	/**
 	 * Creates a new content instance.

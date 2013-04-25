@@ -1,4 +1,4 @@
-<?php namespace Cartalyst\Interpret\Types;
+<?php namespace Cartalyst\Interpret\Content;
 /**
  * Part of the Interpret package.
  *
@@ -18,7 +18,7 @@
  * @link       http://cartalyst.com
  */
 
-class StringContent extends Content implements TypeInterface {
+class StringContent extends Content implements ContentInterface {
 
 	/**
 	 * Returns the HTML equivilent of the content.

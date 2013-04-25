@@ -19,7 +19,7 @@
  */
 
 use Kurenai\DocumentParser;
-use Symfony\Finder\Finder;
+use Symfony\Component\Finder\Finder;
 
 class FilesystemLocator implements LocatorInterface {
 
@@ -74,13 +74,39 @@ class FilesystemLocator implements LocatorInterface {
 	{
 		$file = $this->queryFilesystem($slug);
 
+		if ($file == null) return;
+
 		$contents = $file->getContents();
 
 		return array(
-			$file->getExtension,
+			$file->getExtension(),
 			$this->parser->parseContent($contents),
 			$this->parser->parseMetaData($contents)
 		);
+	}
+
+	/**
+	 * Locates all content, returning an array of
+	 * arrays in the same format as locate().
+	 *
+	 * @return array
+	 */
+	public function locateAll()
+	{
+		$all = array();
+
+		$contents = $file->getContents();
+
+		foreach ($this->queryFilesystem() as $file)
+		{
+			$all[] = array(
+				$file->getExtension(),
+				$this->parser->parseContent($contents),
+				$this->parser->parseMetaData($contents)
+			);
+		}
+
+		return $all;
 	}
 
 	/**
@@ -106,12 +132,15 @@ class FilesystemLocator implements LocatorInterface {
 
 			$iterator = $finder->getIterator();
 
-			if (count($iterator) > 0)
+			if (count($iterator) > 1)
 			{
-				throw new \RuntimeException("Found more than one file to match slug [$slug] in path [$path].");
+				throw new \RuntimeException("Found more than one file to match slug [$slug] in path [{$this->path}].");
 			}
 
-			return reset($iterator);
+			// There must be a better way around this
+			foreach ($iterator as $file) return $file;
+
+			return;
 		}
 
 		return $finder;

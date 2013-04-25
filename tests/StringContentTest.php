@@ -18,38 +18,28 @@
  * @link       http://cartalyst.com
  */
 
-use Illuminate\Database\Migrations\Migration;
+use Mockery as m;
+use Cartalyst\Interpret\Content\StringContent as Content;
 
-class MigrationCartalystInterpretInstall extends Migration {
+class StringContentTest extends PHPUnit_Framework_TestCase {
 
 	/**
-	 * Run the migrations.
+	 * Close mockery.
 	 *
 	 * @return void
 	 */
-	public function up()
+	public function tearDown()
 	{
-		Schema::create('content', function($table)
-		{
-			$table->increments('id');
-			$table->string('format');
-			$table->string('slug');
-			$table->string('value');
-
-			$table->timestamps();
-
-			$table->unique('slug');
-		});
+		m::close();
 	}
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
+	public function testBasicUsage()
 	{
-		Schema::drop('content');
+		$content = new Content('foo', 'Hello world.', array('bar' => 'baz'));
+		$this->assertEquals('foo', $content->getSlug());
+		$this->assertEquals('Hello world.', $content->getValue());
+		$this->assertEquals('Hello world.', $content->toHtml());
+		$this->assertEquals('baz', $content->getAttribute('bar'));
 	}
 
 }

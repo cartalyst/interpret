@@ -1,4 +1,5 @@
 name: Foo
+ description: Bar baz
 
 ---
 

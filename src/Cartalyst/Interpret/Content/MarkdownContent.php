@@ -1,4 +1,4 @@
-<?php namespace Cartalyst\Interpret\Types;
+<?php namespace Cartalyst\Interpret\Content;
 /**
  * Part of the Interpret package.
  *
@@ -20,7 +20,7 @@
 
 use dflydev\markdown\MarkdownParser;
 
-class MarkdownContent extends Content implements TypeInterface {
+class MarkdownContent extends Content implements ContentInterface {
 
 	/**
 	 * Returns the HTML equivilent of the content.
