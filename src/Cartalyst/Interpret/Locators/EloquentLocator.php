@@ -97,7 +97,7 @@ class EloquentLocator extends Model implements LocatorInterface {
 		return array(
 			$content->format,
 			$content->value,
-			array_diff_key($content->attributesToArray(), array_flip(array('slug', 'format', 'value', 'created_at', 'updated_at')))
+			array_diff_key($content->attributesToArray(), array_flip(array('slug', 'format', 'value')))
 		);
 	}
 

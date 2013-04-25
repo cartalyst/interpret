@@ -44,8 +44,8 @@ class EloquentLocatorTest extends PHPUnit_Framework_TestCase {
 		$content->slug         = 'foo';
 		$content->format       = 'md';
 		$content->value        = 'Hello world.';
-		$content->created_at   = new DateTime;
-		$content->updated_at   = new DateTime;
+		$content->created_at   = $createdAt = new DateTime;
+		$content->updated_at   = $updatedAt = new DateTime;
 		$content->additional_1 = 'corge';
 
 		$expected = array(
@@ -53,6 +53,8 @@ class EloquentLocatorTest extends PHPUnit_Framework_TestCase {
 			'Hello world.',
 			array(
 				'additional_1' => 'corge',
+				'created_at'   => $createdAt,
+				'updated_at'   => $updatedAt,
 			),
 		);
 

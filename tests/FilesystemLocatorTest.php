@@ -47,7 +47,12 @@ class FilesystemLocatorTest extends PHPUnit_Framework_TestCase {
 		$expected = array(
 			'md',
 			'This is the page\'s content.',
-			array('name' => 'Foo', 'description' => 'Bar baz'),
+			array(
+				'name'        => 'Foo',
+				'description' => 'Bar baz',
+				'created_at'  => new DateTime('@'.filectime(__DIR__.'/stubs/filesystem/foo.md')),
+				'updated_at'  => new DateTime('@'.filemtime(__DIR__.'/stubs/filesystem/foo.md')),
+			),
 		);
 
 		$this->assertCount(3, $result = $locator->locate('foo'));

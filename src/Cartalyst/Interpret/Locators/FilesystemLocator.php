@@ -76,12 +76,10 @@ class FilesystemLocator implements LocatorInterface {
 
 		if ($file == null) return;
 
-		$contents = $file->getContents();
-
 		return array(
 			$file->getExtension(),
-			$this->parser->parseContent($contents),
-			$this->parser->parseMetaData($contents)
+			$this->extractContent($file),
+			$this->extractAttributes($file)
 		);
 	}
 
@@ -95,14 +93,12 @@ class FilesystemLocator implements LocatorInterface {
 	{
 		$all = array();
 
-		$contents = $file->getContents();
-
 		foreach ($this->queryFilesystem() as $file)
 		{
 			$all[] = array(
 				$file->getExtension(),
-				$this->parser->parseContent($contents),
-				$this->parser->parseMetaData($contents)
+				$this->extractContent($file),
+				$this->extractAttributes($file)
 			);
 		}
 
@@ -154,6 +150,21 @@ class FilesystemLocator implements LocatorInterface {
 		}
 
 		return $finder;
+	}
+
+	public function extractContent($file)
+	{
+		return $this->parser->parseContent($file->getContents());
+	}
+
+	public function extractAttributes($file)
+	{
+		$attributes = array(
+			'created_at' => new \DateTime('@'.$file->getCTime()),
+			'updated_at' => new \DateTime('@'.$file->getMTime()),
+		);
+
+		return array_merge($attributes, $this->parser->parseMetaData($file->getcontents()));
 	}
 
 	/**
