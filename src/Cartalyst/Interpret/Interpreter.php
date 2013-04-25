@@ -20,7 +20,7 @@
 
 use Cartalyst\Interpret\Locators\LocatorInterface;
 
-class Manager {
+class Interpreter {
 
 	/**
 	 * Array of registered locator instances.
