@@ -23,35 +23,10 @@ interface ContentInterface {
 	/**
 	 * Creates a new content instance.
 	 *
-	 * @param  string  $slug
 	 * @param  string  $value
-	 * @param  array   $attributes
 	 * @return void
 	 */
-	public function __construct($slug, $value, array $attributes = null);
-
-	/**
-	 * Set the location which the content came
-	 * from.
-	 *
-	 * @return string
-	 */
-	public function getLocation();
-
-	/**
-	 * Sets the location which the content came
-	 * from.
-	 *
-	 * @param  string  $location
-	 */
-	public function setLocation($location);
-
-	/**
-	 * Returns the content's slug.
-	 *
-	 * @return string
-	 */
-	public function getSlug();
+	public function __construct($value);
 
 	/**
 	 * Returns the content's value.
@@ -66,46 +41,5 @@ interface ContentInterface {
 	 * @return string
 	 */
 	public function toHtml();
-
-	/**
-	 * Get all of the current attributes for the content.
-	 *
-	 * @return array
-	 */
-	public function getAttributes();
-
-	/**
-	 * Set the Theme's attributes.
-	 *
-	 * @param  array  $attributes
-	 * @return void
-	 */
-	public function setAttributes(array $attributes);
-
-	/**
-	 * Fill the content with an array of attributes.
-	 *
-	 * @param  array  $attributes
-	 * @return void
-	 */
-	public function fill(array $attributes);
-
-	/**
-	 * Set a given attribute on the Theme.
-	 *
-	 * @param  string  $key
-	 * @param  mixed   $value
-	 * @return void
-	 */
-	public function setAttribute($key, $value);
-
-	/**
-	 * Get an attribute from the content.
-	 *
-	 * @param  string  $key
-	 * @param  mixed   $default
-	 * @return mixed
-	 */
-	public function getAttribute($key, $default = null);
 
 }

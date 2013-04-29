@@ -18,16 +18,9 @@
  * @link       http://cartalyst.com
  */
 
-use Cartalyst\Interpret\Locators\LocatorInterface;
+use Cartalyst\Interpret\Content\ContentInterface;
 
 class Interpreter {
-
-	/**
-	 * Array of registered locator instances.
-	 *
-	 * @var array
-	 */
-	protected $locators = array();
 
 	/**
 	 * Array of mappings where the key is the class
@@ -39,88 +32,35 @@ class Interpreter {
 	protected $contentMappings = array(
 		'Cartalyst\Interpret\Content\MarkdownContent' => array('md'),
 		'Cartalyst\Interpret\Content\HtmlContent'     => array('html'),
-		'Cartalyst\Interpret\Content\StringContent'   => array('*'),
 	);
 
 	/**
-	 * Create a new manager.
+	 * The fallback class which handles content.
 	 *
-	 * @param  array  $locators
-	 * @return void
+	 * @var string
 	 */
-	public function __construct(array $locators = null, array $contentMappings = null)
-	{
-		if (isset($locators))
-		{
-			$this->locators = $locators;
-		}
-
-		if (isset($contentMappings))
-		{
-			$this->contentMappings = $contentMappings;
-		}
-	}
+	protected $fallback = 'Cartalyst\Interpret\Content\StringContent';
 
 	/**
-	 * Makes a piece of content by the given slug.
+	 * Make a piece of content to be interpreted.
 	 *
-	 * @param  string  $slug
-	 */
-	public function make($slug)
-	{
-		foreach ($this->locators as $locator)
-		{
-			if ($located = $locator->locate($slug))
-			{
-				list($format, $value, $attributes) = $located;
-
-				$content = $this->createContent($format, $slug, $value, $attributes);
-
-				$content->setLocation($locator->getLocation());
-
-				return $content;
-			}
-		}
-
-		throw new ContentNotFoundException("Content [$slug] could not be found.");
-	}
-
-	/**
-	 * Creates a content instance with the given parameters.
-	 *
-	 * @param  string  $format
-	 * @param  string  $slug
 	 * @param  string  $value
-	 * @param  array   $attributes
+	 * @param  string  $format
 	 * @return Cartalyst\Interpret\Content\ContentInterface
 	 */
-	public function createContent($format, $slug, $value, array $attributes = array())
+	public function make($value, $format = null)
 	{
-		foreach ($this->contentMappings as $class => $formats)
-		{
-			// If the formats doesn't contain the wildcad "*" format
-			// and doesn't match the format we're after, we'll just
-			// skip it.
-			if ( ! in_array('*', $formats) and ! in_array($format, $formats))
-			{
-				continue;
-			}
-
-			return new $class($slug, $value, $attributes);
-		}
-
-		throw new \RuntimeException("Could not find class mapping for content [$slug] in [$format] format.");
+		return $this->createContent($value, $format);
 	}
 
 	/**
-	 * Adds a new locator.
+	 * Get the content mappings.
 	 *
-	 * @param  Cartalyst\Interpret\Locators\LocatorInterface  $locator
-	 * @return void
+	 * @return array
 	 */
-	public function addLocator(LocatorInterface $locator)
+	public function getContentMappings()
 	{
-		$this->locators[] = $locator;
+		return $this->contentMappings;
 	}
 
 	/**
@@ -148,6 +88,70 @@ class Interpreter {
 			$this->contentMappings[$class],
 			(array) $formats
 		);
+	}
+
+	/**
+	 * Get the fallback content class.
+	 *
+	 * @return strin
+	 */
+	public function getFallback()
+	{
+		return $this->fallback;
+	}
+
+	/**
+	 * Set the fallback content class.
+	 *
+	 * @param  string  $fallback
+	 * @return void
+	 */
+	public function setFallback($fallback)
+	{
+		$this->fallback = $fallback;
+	}
+
+	/**
+	 * Creates content with the given name and value.
+	 *
+	 * @param  string  $value
+	 * @param  string  $format
+	 * @return Cartalyst\Interpet\Content\ContentInterface
+	 */
+	protected function createContent($value, $format = null)
+	{
+		if ($format)
+		{
+			foreach ($this->contentMappings as $class => $formats)
+			{
+				if ( ! in_array($format, $formats)) continue;
+
+				return $this->createContentInstance($class, $value);
+			}
+		}
+
+		return $this->createContentInstance($this->fallback, $value);
+	}
+
+	/**
+	 * Creates a class with the given value.
+	 *
+	 * @param  string  $class
+	 * @param  string  $value
+	 * @return Cartalyst\Interpet\Content\ContentInterface
+	 */
+	protected function createContentInstance($class, $value)
+	{
+		$_class = '\\'.ltrim($class, '\\');
+
+		$instance =  new $_class($value);
+
+		if ( ! $instance instanceof ContentInterface)
+		{
+			throw new \RuntimeException("Content clas must be an instance of [Cartalyst\Interpret\Content\ContentInterface], [$class] given.");
+		}
+
+		return $instance;
 	}
 
 }

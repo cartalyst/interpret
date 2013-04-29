@@ -1,4 +1,4 @@
-<?php namespace Cartalyst\Interpret;
+<?php namespace Cartalyst\Interpret\Facades;
 /**
  * Part of the Interpret package.
  *
@@ -18,4 +18,15 @@
  * @link       http://cartalyst.com
  */
 
-class ContentNotFoundException extends \RuntimeException {}
+use Illuminate\Support\Facades\Facade;
+
+class Interpreter extends Facade {
+
+	/**
+	 * Get the registered name of the component.
+	 *
+	 * @return string
+	 */
+	protected static function getFacadeAccessor() { return 'interpreter'; }
+
+}
