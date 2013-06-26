@@ -1,6 +1,6 @@
 # cartalyst/interpret
 
-Interpret is a drive-based content rendering package, with support for HTML, Markdown & plain text. You can register custom drivers for custom content types.
+Interpret is a driver-based content rendering package, with support for HTML, Markdown & plain text. You can register custom drivers for custom content types.
 
 As you pass content to interpret, it will determine what it is and allow you to extract it's normal value and HTML equivilent.
 
