@@ -2,7 +2,7 @@
 
 Interpret is a driver-based content rendering package, with support for HTML, Markdown & plain text. You can register custom drivers for custom content types.
 
-As you pass content to interpret, it will determine what it is and allow you to extract it's normal value and HTML equivilent.
+As you pass content to interpret, it will determine what it is and allow you to extract it's normal value and HTML equivalent.
 
 ### Installation
 
@@ -35,7 +35,7 @@ Add `Cartalyst\Interpret\InterpretServiceProvider` to your service provider arra
 ```
 $interpreter = new Cartalyst\Interpret\Interpreter;
 
-$content = $interpreter->make(<<<
+$content = $interpreter->make(<<<MARKDOWN
 # Hello there
 
 1. Foo
