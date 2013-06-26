@@ -1,3 +1,0 @@
-## Introduction
-
-* [Overview](/interpret/introduction)
