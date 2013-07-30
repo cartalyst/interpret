@@ -1,8 +1,8 @@
 # cartalyst/interpret
 
-Interpret is a drive-based content rendering package, with support for HTMl, Markdown & plain text. You can register custom drivers for custom content types.
+Interpret is a driver-based content rendering package, with support for HTML, Markdown & plain text. You can register custom drivers for custom content types.
 
-As you pass content to interpret, it will determine what it is and allow you to extract it's normal value and HTML equivilent.
+As you pass content to interpret, it will determine what it is and allow you to extract it's normal value and HTML equivalent.
 
 ### Installation
 
@@ -35,7 +35,7 @@ Add `Cartalyst\Interpret\InterpretServiceProvider` to your service provider arra
 ```
 $interpreter = new Cartalyst\Interpret\Interpreter;
 
-$content = $interpreter->make(<<<
+$content = $interpreter->make(<<<MARKDOWN
 # Hello there
 
 1. Foo
@@ -57,10 +57,10 @@ echo $content->toHtml();
 
 ### Extending Interpret
 
-We mentioned that interpret is drive based. Extending it with new content types is very easy. You just need to make a class which implements `Cartalyst\Interpret\Content\ContentInterface` and register it.s
+We mentioned that interpret is drive based. Extending it with new content types is very easy. You just need to make a class which implements `Cartalyst\Interpret\Content\ContentInterface` and register it.
 
 ```
-clas TextileContent implements Cartalyst\Interpret\Content\ContentInterface {
+class TextileContent implements Cartalyst\Interpret\Content\ContentInterface {
 
     protected $value;
 
@@ -107,4 +107,4 @@ Interpreter::addContentMapping('TextileContent', 'textile');
 echo $interpreter->make('foo', 'textile')->toHtml();
 ```
 
-Of course, we'd love a pull request with your new content type! We're planning on adding many content types, but if you have one which you think would be useful for the community, please do submit a pull request for it.
+Of course, we'd love a pull request with your new content type! We're planning on adding many content types, but if you have one which you think would be useful for the community, please submit a pull request for it.
