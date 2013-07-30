@@ -21,6 +21,16 @@
 class StringContent extends Content implements ContentInterface {
 
 	/**
+	 * Returns the content's value.
+	 *
+	 * @return string
+	 */
+	public function getValue()
+	{
+		return $this->value;
+	}
+
+	/**
 	 * Returns the HTML equivilent of the content.
 	 *
 	 * @return string
