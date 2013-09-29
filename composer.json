@@ -38,7 +38,7 @@
 
 		"symfony/finder": "2.3.*",
 
-		"dflydev/markdown": "v1.0.2",
+		"dflydev/markdown": "v1.0.3",
 
 		"daylerees/kurenai": "1.0.*"
 	},
