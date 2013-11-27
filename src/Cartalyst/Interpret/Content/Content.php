@@ -38,4 +38,14 @@ abstract class Content {
 		$this->value = $value;
 	}
 
+	/**
+	 * Returns the content's value.
+	 *
+	 * @return string
+	 */
+	public function getValue()
+	{
+		return $this->value;
+	}
+
 }
