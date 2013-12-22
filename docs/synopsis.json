@@ -1,9 +1,5 @@
 {
 	"name" : "Interpret",
-	"type" : "package",
-	"public" : false,
-	"branch" : "master",
 	"github" : "cartalyst/interpret",
-	"travis" : false,
 	"demo" : false
 }
