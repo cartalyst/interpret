@@ -18,10 +18,10 @@
  * @link       http://cartalyst.com
  */
 
-use dflydev\markdown\MarkdownParser;
+use Michelf\Markdown;
 
 class MarkdownContent extends Content implements ContentInterface {
-
+	
 	/**
 	 * Returns the HTML equivilent of the content.
 	 *
@@ -29,17 +29,15 @@ class MarkdownContent extends Content implements ContentInterface {
 	 */
 	public function toHtml()
 	{
-		return $this->createParser()->transformMarkdown($this->getValue());
+		return $this->createParser()->defaultTransform($this->getValue());
 	}
-
 	/**
 	 * Creates a new Markdown Parser instance.
 	 *
-	 * @return dflydev\markdown\MarkdownParser
+	 * @return Michelf
 	 */
 	public function createParser()
 	{
-		return new MarkdownParser;
+		return new Markdown;
 	}
-
 }
