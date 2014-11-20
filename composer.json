@@ -35,15 +35,12 @@
 		"michelf/php-markdown": "1.4.*"
 	},
 	"require-dev": {
-		"mockery/mockery": "0.7.2"
+		"phpunit/phpunit": "~4.1",
+		"mockery/mockery": "~0.9"
 	},
 	"autoload": {
-		"classmap": [
-			"src/Cartalyst/Interpret/Exceptions.php",
-			"src/migrations"
-		],
-		"psr-0": {
-			"Cartalyst\\Interpret": "src"
+		"psr-4": {
+			"Cartalyst\\Interpret\\": "src/"
 		}
 	},
 	"extra": {
