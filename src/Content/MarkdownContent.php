@@ -28,7 +28,7 @@ class MarkdownContent extends Content implements ContentInterface {
 	 */
 	public function toHtml()
 	{
-		return $this->createParser()->transform($this->getValue());
+		return $this->createParser()->defaultTransform($this->getValue());
 	}
 
 	/**
