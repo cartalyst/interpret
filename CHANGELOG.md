@@ -6,8 +6,8 @@ This project follows [Semantic Versioning](CONTRIBUTING.md).
 
 We do not give estimated times for completion on `Accepted` Proposals.
 
-- [Accepted](https://github.com/cartalyst/cart/labels/Accepted)
-- [Rejected](https://github.com/cartalyst/cart/labels/Rejected)
+- [Accepted](https://github.com/cartalyst/interpret/labels/Accepted)
+- [Rejected](https://github.com/cartalyst/interpret/labels/Rejected)
 
 ---
 
