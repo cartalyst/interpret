@@ -37,7 +37,6 @@ class InterpreterTest extends PHPUnit_Framework_TestCase {
 	{
 		$expectedMappings = array(
 			'Cartalyst\Interpret\Content\MarkdownContent' => array('md'),
-			'Cartalyst\Interpret\Content\HtmlContent'     => array('html'),
 		);
 
 		$mappings = $this->interpreter->getContentMappings();
@@ -50,7 +49,6 @@ class InterpreterTest extends PHPUnit_Framework_TestCase {
 	{
 		$expectedMappings = array(
 			'Cartalyst\Interpret\Content\MarkdownContent' => array('md'),
-			'Cartalyst\Interpret\Content\HtmlContent'     => array('html'),
 			'Cartalyst\Interpret\Content\FooContent'      => array('foo'),
 		);
 
@@ -65,11 +63,10 @@ class InterpreterTest extends PHPUnit_Framework_TestCase {
 	public function it_can_add_formats_to_content_mappings()
 	{
 		$expectedMappings = array(
-			'Cartalyst\Interpret\Content\MarkdownContent' => array('md'),
-			'Cartalyst\Interpret\Content\HtmlContent'     => array('html', 'htm'),
+			'Cartalyst\Interpret\Content\MarkdownContent' => array('md', 'mdm'),
 		);
 
-		$this->interpreter->addFormatsToContentMapping('Cartalyst\Interpret\Content\HtmlContent', 'htm');
+		$this->interpreter->addFormatsToContentMapping('Cartalyst\Interpret\Content\MarkdownContent', 'mdm');
 
 		$mappings = $this->interpreter->getContentMappings();
 

@@ -30,7 +30,6 @@ class Interpreter {
 	 */
 	protected $contentMappings = array(
 		'Cartalyst\Interpret\Content\MarkdownContent' => array('md'),
-		'Cartalyst\Interpret\Content\HtmlContent'     => array('html'),
 	);
 
 	/**
