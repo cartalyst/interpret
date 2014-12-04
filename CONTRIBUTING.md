@@ -1,4 +1,4 @@
-# Interpret Contributing Guide
+# Contribution Guide
 
 This project adheres to the following standards and practices.
 
