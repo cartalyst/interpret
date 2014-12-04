@@ -1,4 +1,4 @@
-# [PROJECT_NAME] Protocol
+# Interpret Contributing Guide
 
 This project adheres to the following standards and practices.
 
