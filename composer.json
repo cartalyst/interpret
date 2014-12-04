@@ -1,7 +1,7 @@
 {
 	"name": "cartalyst/interpret",
-	"description": "CMS, revolutionalized.",
-	"keywords": ["platform", "ecommerce", "laravel", "bootstrap"],
+	"description": "Driver-based content rendering package",
+	"keywords": ["cartalyst", "laravel", "markdown", "content"],
 	"license": "proprietary",
 	"authors": [
 		{
