@@ -35,7 +35,7 @@ interface ContentInterface {
 	public function getValue();
 
 	/**
-	 * Returns the HTML equivilent of the content.
+	 * Returns the HTML equivalent of the content.
 	 *
 	 * @return string
 	 */

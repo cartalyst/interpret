@@ -1,4 +1,4 @@
-<?php namespace Cartalyst\Interpret\Facades;
+<?php namespace Cartalyst\Interpret\Laravel\Facades;
 /**
  * Part of the Interpret package.
  *

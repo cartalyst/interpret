@@ -22,23 +22,28 @@ use Michelf\Markdown;
 class MarkdownContent extends Content implements ContentInterface {
 
 	/**
-	 * Returns the HTML equivilent of the content.
+	 * Markdown parser instance.
 	 *
-	 * @return string
+	 * @var \Michelf\Markdown
+	 */
+	protected $parser;
+
+	/**
+	 * {@inheritDoc}
 	 */
 	public function toHtml()
 	{
-		return $this->createParser()->defaultTransform($this->getValue());
+		return $this->getParser()->defaultTransform($this->getValue());
 	}
 
 	/**
-	 * Creates a new Markdown Parser instance.
+	 * Returns the markdown parser instance.
 	 *
-	 * @return Michelf\Markdown
+	 * @return \Michelf\Markdown
 	 */
-	public function createParser()
+	protected function getParser()
 	{
-		return new Markdown;
+		return $this->parser ?: $this->parser = new Markdown();
 	}
 
 }

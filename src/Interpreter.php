@@ -92,7 +92,7 @@ class Interpreter {
 	/**
 	 * Get the fallback content class.
 	 *
-	 * @return strin
+	 * @return string
 	 */
 	public function getFallback()
 	{
@@ -147,7 +147,7 @@ class Interpreter {
 
 		if ( ! $instance instanceof ContentInterface)
 		{
-			throw new \RuntimeException("Content clas must be an instance of [Cartalyst\Interpret\Content\ContentInterface], [$class] given.");
+			throw new \RuntimeException("Content class must be an instance of [Cartalyst\Interpret\Content\ContentInterface], [$class] given.");
 		}
 
 		return $instance;

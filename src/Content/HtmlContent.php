@@ -17,6 +17,6 @@
  * @link       http://cartalyst.com
  */
 
-class HtmlContent extends StringContent implements ContentInterface {
+class HtmlContent extends StringContent {
 
 }

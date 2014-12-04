@@ -1,4 +1,4 @@
-<?php namespace Cartalyst\Interpret;
+<?php namespace Cartalyst\Interpret\Laravel;
 /**
  * Part of the Interpret package.
  *

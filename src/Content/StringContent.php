@@ -20,9 +20,7 @@
 class StringContent extends Content implements ContentInterface {
 
 	/**
-	 * Returns the HTML equivilent of the content.
-	 *
-	 * @return string
+	 * {@inheritDoc}
 	 */
 	public function toHtml()
 	{
