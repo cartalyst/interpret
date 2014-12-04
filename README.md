@@ -1,6 +1,6 @@
 # Interpret
 
-A driver-based content rendering package, with support for HTML, Markdown & plain text. You can register custom drivers for custom content types. As you pass content to interpret, it will determine what it is and allow you to extract it's normal value and HTML equivalent.
+A rendering package, with support for HTML, Markdown & plain text. You can register custom mappings for custom content types. As you pass content to interpret, it will determine what it is and allow you to extract it's normal value and HTML equivalent.
 
 An open source package by [Cartalyst](https://cartalyst.com), code well, rock on!
 
@@ -28,9 +28,8 @@ Bug reports, proposals, and pull requests can be submitted by following our [Con
 
 ##Contribution & Protocols
 
-- [Semantic Versioning](PROTOCOL.md/#)
-- [Contribution Guide](PROTOCOL.md/#)
-- [Coding Guidelines](PROTOCOL.md/#)
+- [Contribution Guide](CONTRIBUTING.md)
+
 
 ##License
 
