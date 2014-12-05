@@ -17,6 +17,7 @@
  * @link       http://cartalyst.com
  */
 
+use Cartalyst\Interpret\Interpreter;
 use Illuminate\Support\ServiceProvider;
 
 class InterpretServiceProvider extends ServiceProvider {
