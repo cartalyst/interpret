@@ -39,5 +39,5 @@ The integration is done and you can now use all the available methods, here's an
 
 ```php
 // Convert from markdown to html
-echo $interpreter->make('## Hello', 'md');
+echo $interpreter->make('## Hello', 'md')->toHtml();
 ```
