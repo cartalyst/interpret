@@ -1,5 +1,7 @@
 # Interpret
 
+[![Build Status](http://ci.cartalyst.com/build-status/svg/36)](http://ci.cartalyst.com/build-status/view/36)
+
 A rendering package, with support for HTML, Markdown & plain text. You can register custom mappings for custom content types. As you pass content to interpret, it will determine what it is and allow you to extract it's normal value and HTML equivalent.
 
 An open source package by [Cartalyst](https://cartalyst.com), code well, rock on!
@@ -13,6 +15,7 @@ Raw files can be found via this projects docs/version branch.
 - [v1.0](https://github.com/cartalyst/interpret/tree/docs/1.0)
 
 ##Changelog
+
 Important versions listed below. Refer to the [Changelog](CHANGELOG.md) for a full history of the project.
 
 - [1.0](CHANGELOG.md) - 2013-04-13
