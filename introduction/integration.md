@@ -11,13 +11,13 @@ After installing the package, open your Laravel config file located at `app/conf
 In the `$providers` array add the following service provider for this package.
 
 ```php
-'Cartalyst\Interpret\InterpretServiceProvider',
+'Cartalyst\Interpret\Laravel\InterpretServiceProvider',
 ```
 
 In the `$aliases` array add the following facade for this package.
 
 ```php
-'Interpreter' => 'Cartalyst\Interpret\Facades\Interpreter',
+'Interpreter' => 'Cartalyst\Interpret\Laravel\Facades\Interpreter',
 ```
 
 ### Native

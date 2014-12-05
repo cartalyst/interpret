@@ -6,7 +6,7 @@ The best and easiest way to install the Interpret package is with [Composer](htt
 
 Open your `composer.json` and add the following to the `require` array:
 
-	"cartalyst/interpret": "1.0.*"
+	"cartalyst/interpret": "1.1.*"
 
 Add the following lines after the `require` array on your `composer.json` file:
 
