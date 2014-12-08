@@ -1,6 +1,6 @@
 ## Installation
 
-The best and easiest way to install the Interpret package is with [Composer](http://getcomposer.org).
+Cartalyst packages utilize [Composer](http://getcomposer.org), for more information on how to install Composer please read the [Composer Documentation](https://getcomposer.org/doc/00-intro.md).
 
 ### Preparation
 
@@ -14,10 +14,12 @@ Open your `composer.json` and add the following to the `require` array:
 
 Run Composer to install or update the new requirement.
 
-	php composer install
+	composer install
 
 or
 
-	php composer update
+	composer update
+
+> **Note:** We're assuming you have Composer installed Globally.
 
 Now you are able to require the `vendor/autoload.php` file to autoload the package.
