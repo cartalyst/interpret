@@ -11,6 +11,12 @@ We do not give estimated times for completion on `Accepted` Proposals.
 
 ---
 
+### v1.1.1 - 2014-12-10
+
+`REVISED`
+
+- Change license to BSD-3.
+
 ### v1.1.0 - 2014-12-05
 
 `ADDED`

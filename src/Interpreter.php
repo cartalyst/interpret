@@ -10,7 +10,7 @@
  * bundled with this package in the LICENSE file.
  *
  * @package    Interpret
- * @version    1.1.0
+ * @version    1.1.1
  * @author     Cartalyst LLC
  * @license    BSD-3-Clause
  * @copyright  (c) 2011-2014, Cartalyst LLC
