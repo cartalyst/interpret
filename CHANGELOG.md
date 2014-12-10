@@ -13,9 +13,9 @@ We do not give estimated times for completion on `Accepted` Proposals.
 
 ### v1.0.2 - 2014-12-10
 
-`ADDED`
+`REVISED`
 
-- Fixed a bug on the markdown interpreter.
+- Change license to BSD-3.
 
 ### v1.0.1 - 2013-06-14
 
