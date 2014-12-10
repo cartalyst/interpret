@@ -28,6 +28,12 @@ We do not give estimated times for completion on `Accepted` Proposals.
 
 - HtmlContent
 
+### v1.0.2 - 2014-12-10
+
+`REVISED`
+
+- Change license to BSD-3.
+
 ### v1.0.1 - 2013-06-14
 
 `ADDED`

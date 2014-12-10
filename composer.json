@@ -10,7 +10,7 @@
 		"markdown",
 		"html"
 	],
- 	"license": "proprietary",
+	"license": "BSD-3-Clause",
 	"authors": [
 		{
 			"name": "Cartalyst LLC",
