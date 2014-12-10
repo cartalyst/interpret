@@ -35,6 +35,6 @@ Bug reports, proposals, and pull requests can be submitted by following our [Con
 
 ##License
 
-This software is released under the [Cartalyst PSL](LICENSE) License.
+This software is released under the [BSD-3-Clause](LICENSE) License.
 
 © 2012-2014 Cartalyst LLC, All rights reserved.
