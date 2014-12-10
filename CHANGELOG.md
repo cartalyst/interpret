@@ -11,6 +11,12 @@ We do not give estimated times for completion on `Accepted` Proposals.
 
 ---
 
+### v1.0.2 - 2014-12-10
+
+`ADDED`
+
+- Fixed a bug on the markdown interpreter.
+
 ### v1.0.1 - 2013-06-14
 
 `ADDED`
