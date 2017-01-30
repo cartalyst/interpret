@@ -10,10 +10,10 @@
  * bundled with this package in the license.txt file.
  *
  * @package    Interpret
- * @version    1.1.1
+ * @version    1.1.2
  * @author     Cartalyst LLC
  * @license    Cartalyst PSL
- * @copyright  (c) 2011-2014, Cartalyst LLC
+ * @copyright  (c) 2011-2017, Cartalyst LLC
  * @link       http://cartalyst.com
  */
 

@@ -11,6 +11,12 @@ We do not give estimated times for completion on `Accepted` Proposals.
 
 ---
 
+### v1.1.2 - 2017-01-30
+
+`REVISED`
+
+- Updated service provider for laravel 5.4.
+
 ### v1.1.1 - 2014-12-10
 
 `REVISED`
