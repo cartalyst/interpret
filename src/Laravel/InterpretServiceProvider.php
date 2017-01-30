@@ -29,7 +29,7 @@ class InterpretServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app['interpreter'] = $this->app->share(function($app)
+		$this->app->singleton('interpreter', function($app)
 		{
 			return new Interpreter;
 		});
