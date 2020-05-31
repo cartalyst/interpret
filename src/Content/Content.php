@@ -4,17 +4,17 @@
  *
  * NOTICE OF LICENSE
  *
- * Licensed under BSD-3-Clause.
+ * Licensed under the 3-clause BSD License.
  *
- * This source file is subject to the BSD-3-Clause License that is
+ * This source file is subject to the 3-clause BSD License that is
  * bundled with this package in the LICENSE file.
  *
  * @package    Interpret
- * @version    1.1.2
+ * @version    1.1.3
  * @author     Cartalyst LLC
- * @license    BSD-3-Clause
- * @copyright  (c) 2011-2017, Cartalyst LLC
- * @link       http://cartalyst.com
+ * @license    BSD License (3-clause)
+ * @copyright  (c) 2011-2020, Cartalyst LLC
+ * @link       https://cartalyst.com
  */
 
 abstract class Content {

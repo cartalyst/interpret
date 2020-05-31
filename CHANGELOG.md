@@ -11,6 +11,12 @@ We do not give estimated times for completion on `Accepted` Proposals.
 
 ---
 
+### v1.1.3 - 2020-05-30
+
+`REVISED`
+
+- Loosen markdown package dependency.
+
 ### v1.1.2 - 2017-01-30
 
 `REVISED`
